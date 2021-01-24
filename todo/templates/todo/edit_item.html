@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit a ToDo Item</h1>
+    <!-- action removed as it will cause it to post to the same URL we're currently on-->
+    <form method="POST">
+        <!-- this is a randomly generated unique value added to the form as hidden input field when 
+            the form is submitted to guarantee that the data we're posting is actually coming from our todolist and not another website-->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <p>
+                <button type="submit">Update Item</button>
+            </p>
+        </div>
+    </form>
+
+</body>
+</html>

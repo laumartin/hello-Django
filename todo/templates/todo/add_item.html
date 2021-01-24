@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add a ToDo Item</h1>
+    <!-- action of add. This is going to be our add URL that we're going to submit the form to.-->
+    <form method="POST" action="add">
+        <!-- this is a randomly generated unique value added to the form as hidden input field when 
+            the form is submitted to guarantee that the data we're posting is actually coming from our todolist and not another website-->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <p>
+                <button type="submit">Add Item</button>
+            </p>
+        </div>
+    </form>
+
+</body>
+</html>
